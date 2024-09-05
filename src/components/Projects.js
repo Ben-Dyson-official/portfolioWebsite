@@ -32,7 +32,7 @@ export const Projects = () => {
             title: "Portfolio Website",
             description: "This the portfolio website you are currently viewing",
             imgUrl: portfolioImg,
-            gitLink: ''
+            gitLink: 'https://github.com/Ben-Dyson-official/portfolioWebsite'
         }
     ];
 
