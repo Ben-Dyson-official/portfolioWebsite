@@ -1,6 +1,6 @@
 # Making an Update
 1. In new terminal run: ssh -p 2022 bendyson@{ current ip address } - found on cloudflare dns settings
-2. Run cd /car/www/html/benjamindyson.com/portfolioWebiste
+2. Run cd /var/www/html/benjamindyson.com/portfolioWebsite
 3. Git pull
 4. Done
 
