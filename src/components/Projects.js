@@ -12,13 +12,13 @@ export const Projects = () => {
     const webDevProjects = [
         {
             title: "Music Transcriber",
-            description: "This is a website that converts an audio sample of music to a rough sheet music. It was created for my A-Level coursework. It uses flask, html, css and python.",
+            description: "This is a website that converts an audio sample of music to a rough sheet music. It was created for my A-Level coursework. It uses flask, html, CSS and python.",
             imgUrl: NEAImg,
             gitLink: 'https://github.com/Ben-Dyson-official/MusicTranscriber'
         },
         {
             title: "Cryptodeal",
-            description: "This website simulates a trading platform allowing users to practise trading cryptocurrency with up-to-date prices. It offers features such as latest news articles and watchlists for certain currencies. It uses laravel, JavaScript, css, html and PHP.",
+            description: "This website simulates a trading platform allowing users to practise trading cryptocurrency with up-to-date prices. It offers features such as latest news articles and watchlists for certain currencies. It uses laravel, JavaScript, CSS, html and PHP.",
             imgUrl: cryptoDealImg,
             gitLink: 'https://github.com/Sergey-Mr/CryptoDeal'
         },
