@@ -2,9 +2,9 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import { HashLink } from 'react-router-hash-link';
 import { useState, useEffect } from "react";
 import logo from '../assets/img/Logo.png';
-import NavIcon1 from '../assets/img/nav-icon1.svg';
-import NavIcon2 from '../assets/img/nav-icon2.svg';
-import NavIcon3 from '../assets/img/nav-icon3.svg';
+import linkedInLogo from '../assets/img/linkedInlogo.svg';
+import emailImg from '../assets/img/email.png';
+import githubLogo from '../assets/img/githubLogo.png';
 
 
 export const NavBar = () => {
@@ -46,9 +46,9 @@ export const NavBar = () => {
                     </Nav>
                     <span className="navbar-text">
                         <div className="social-icon">
-                            <a href="https://www.linkedin.com/in/ben-dyson-636717223/"><img src={NavIcon1} alt=""/></a>
-                            <a href="https://www.facebook.com/ben.dyson.754/"><img src={NavIcon2} alt=""/></a>
-                            <a href="https://www.instagram.com/ben_dyson_/"><img src={NavIcon3} alt=""/></a>
+                            <a href="https://github.com/Ben-Dyson-official"><img src={githubLogo} alt=""/></a>
+                            <a href="https://www.linkedin.com/in/ben-dyson-636717223/"><img src={linkedInLogo} alt=""/></a>
+                            <a href="mailto:benj.dyson@gmail.com"><img src={emailImg} alt=""/></a>
                         </div>
                         {/* <HashLink to='#connect'>
                             <button className="vvd"><span>Let’s Connect</span></button>
