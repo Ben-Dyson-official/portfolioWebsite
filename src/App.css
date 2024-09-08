@@ -108,6 +108,8 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 span.navbar-text {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
 }
 .social-icon {
     display: inline-block;
