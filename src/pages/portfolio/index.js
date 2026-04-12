@@ -1,52 +1,102 @@
-import React, { useState } from "react";
+import React from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { Container, Row, Col } from "react-bootstrap";
 import { dataportfolio, meta } from "../../content_option";
 
 export const Portfolio = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
+  const flagship = dataportfolio.find((p) => p.flagship);
+  const rest = dataportfolio.filter((p) => !p.flagship);
 
   return (
     <HelmetProvider>
-      <Container className="About-header">
+      <div className="page-container">
         <Helmet>
           <meta charSet="utf-8" />
-          <title>Portfolio | {meta.title}</title>
+          <title>Work | {meta.title}</title>
           <meta name="description" content={meta.description} />
         </Helmet>
 
-        <Row className="mb-5 mt-3 pt-md-3">
-          <Col lg="8">
-            <h1 className="display-4 mb-4">Portfolio</h1>
-            <hr className="t_border my-4 ml-0 text-left" />
-          </Col>
-        </Row>
+        <h1 className="section-heading">Work</h1>
+        <p className="portfolio-subtitle">
+          A selection of projects — dissertation, hackathons, and personal work.
+        </p>
+        <hr className="section-divider" />
 
-        <div className="mb-5 po_items_ho">
-          {dataportfolio.map((data, i) => (
-            <div key={i} className="po_item" onClick={() => setSelectedProject(data)}>
-              <img src={data.img} alt="Project screenshot" />
-              <div className="content">
-                <p>{data.description}</p>
-                <a href={data.link} onClick={(e) => e.stopPropagation()}>View Project</a>
+        {/* Flagship: Stridify */}
+        {flagship && (
+          <div className="project-flagship">
+            <div className="project-flagship__visual">
+              <div className="project-gradient-tile" aria-hidden="true">
+                <span className="project-gradient-tile__name">{flagship.title}</span>
               </div>
             </div>
-          ))}
-        </div>
-
-        {/* Modal Popup */}
-        {selectedProject && (
-          <div className="modal-overlay" onClick={() => setSelectedProject(null)}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-              <span className="close" onClick={() => setSelectedProject(null)}>&times;</span>
-              <img src={selectedProject.img} alt="Project screenshot" className="modal-img" />
-              <p>{selectedProject.description}</p>
-              <a href={selectedProject.link} target="_blank" rel="noopener noreferrer">View Project</a>
+            <div className="project-flagship__content">
+              <div className="project-meta">
+                <span className="project-tagline">{flagship.tagline}</span>
+                <span className="project-badge">Dissertation</span>
+              </div>
+              <h2 className="project-title">{flagship.title}</h2>
+              <p className="project-desc">{flagship.description}</p>
+              <div className="project-tech">
+                {flagship.tech.map((t, i) => (
+                  <span key={i} className="tech-tag">{t}</span>
+                ))}
+              </div>
+              {flagship.link ? (
+                <a
+                  href={flagship.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn--primary project-cta"
+                >
+                  View on GitHub →
+                </a>
+              ) : (
+                <span className="link-private">{flagship.linkLabel}</span>
+              )}
             </div>
           </div>
         )}
-      </Container>
+
+        {/* Other projects grid */}
+        <div className="projects-grid">
+          {rest.map((project, i) => (
+            <article key={i} className="project-card">
+              <div className="project-card__img">
+                {project.img ? (
+                  <img src={project.img} alt={`${project.title} screenshot`} loading="lazy" />
+                ) : (
+                  <div className="project-gradient-tile project-gradient-tile--sm" aria-hidden="true">
+                    <span className="project-gradient-tile__name">{project.title}</span>
+                  </div>
+                )}
+              </div>
+              <div className="project-card__body">
+                <p className="project-tagline">{project.tagline}</p>
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-desc">{project.description}</p>
+                <div className="project-tech">
+                  {project.tech.map((t, j) => (
+                    <span key={j} className="tech-tag">{t}</span>
+                  ))}
+                </div>
+                {project.link ? (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-card__link"
+                  >
+                    GitHub →
+                  </a>
+                ) : (
+                  <span className="link-private link-private--sm">No public repo</span>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
     </HelmetProvider>
   );
 };

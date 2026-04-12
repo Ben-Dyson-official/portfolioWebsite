@@ -1,128 +1,105 @@
-const logotext = "JOHN";
+const logotext = "BD";
 const meta = {
-    title: "Ben Dyson Portfolio",
-    description: "",
+  title: "Ben Dyson — Computer Science portfolio",
+  description:
+    "Third-year Computer Science student at the University of Manchester. Selected work in machine learning, full-stack web, and mobile development.",
 };
 
 const introdata = {
-    title: "I’m Ben Dyson",
-    animated: {
-        first: "I love coding",
-        second: ""
-    },
-    description: "2nd year Computer Scientist at the University of Manchester",
-    your_img_url: "https://images.unsplash.com/photo-1514790193030-c89d266d5a9d",
+  title: "Ben Dyson",
+  description:
+    "Third-year Computer Science student at the University of Manchester. My dissertation develops Stridify — an on-device adaptive music generator for runners, powered by a custom transformer model that runs entirely on iOS. Looking for graduate software engineering roles.",
 };
 
 const dataabout = {
-    title: "About me",
-    aboutme: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dolor id ligula semper elementum feugiat pretium nulla. Nunc non commodo dolor. Nunc mollis dignissim facilisis. Morbi ut magna ultricies.",
+  title: "About me",
+  aboutme:
+    "I'm a third-year Computer Science student at the University of Manchester with interests in machine learning, systems programming, and full-stack web development. My dissertation project, Stridify, explores on-device generative AI — training a compact transformer model to generate music that adapts in real time to a runner's biometric data, without any server involvement. Outside of my dissertation I enjoy hackathons (Starmapper was built in 48 hours), working through algorithmic challenges, and building things that are actually useful.",
 };
-const worktimeline = [{
-        jobtitle: "Designer of week",
-        where: "YAdfi",
-        date: "2020",
-    },
-    {
-        jobtitle: "Designer of week",
-        where: "Jamalya",
-        date: "2019",
-    },
-    {
-        jobtitle: "Designer of week",
-        where: "ALquds",
-        date: "2019",
-    },
-];
 
-const skills = [{
-        name: "Python",
-        value: 90,
-    },
-    {
-        name: "Djano",
-        value: 85,
-    },
-    {
-        name: "Javascript",
-        value: 80,
-    },
-    {
-        name: "React",
-        value: 60,
-    },
-    {
-        name: "Jquery",
-        value: 85,
-    },
-];
+const skills = {
+  Languages: ["Python", "TypeScript", "JavaScript", "Java", "C", "SQL"],
+  Frameworks: ["React", "React Native", "Flask", "PyTorch", "Expo", "Node.js"],
+  Tools: ["Git", "Linux", "ONNX Runtime", "OpenCV", "TensorFlow"],
+};
 
-const services = [{
-        title: "UI & UX Design",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum sollicitudin.",
-    },
-    {
-        title: "Mobile Apps",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum sollicitudin.",
-    },
-    {
-        title: "Wordpress Design",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum sollicitudin.",
-    },
-];
-
-const dataportfolio = [{
-        img: require("./assets/img/ProjectImage/cryptoDeal.png"),
-        description: "This website simulates a trading platform allowing users to practise trading cryptocurrency with up-to-date prices. It offers features such as latest news articles and watchlists for certain currencies. It uses laravel, JavaScript, CSS, html and PHP.",
-        link: "https://github.com/Sergey-Mr/CryptoDeal",
-    },
-    {
-        img: require("./assets/img/ProjectImage/MusicTranscriber.png"),
-        description: "This is a website that converts an audio sample of music to a rough sheet music. It was created for my A-Level coursework. It uses flask, html, CSS and python.",
-        link: "https://github.com/Ben-Dyson-official/MusicTranscriber",
-    },
-    {
-        img: require("./assets/img/ProjectImage/Starmapper.png"),
-        description: "This website has a couple features - constellation identifying, image denoising and star/cluster recognition. It was created as part of a hackathon in a team of three over two days. It uses flask and python as well as the OpenCV and tensorflow libraries.",
-        link: "https://github.com/Ben-Dyson-official/mush2024",
-    },
-    {
-        img: require("./assets/img/ProjectImage/MarioClone.png"),
-        description: "This is a game created using python's tkinter GUI. It is a clone for super mario bros and was created as part of a university module.",
-        link: "https://github.com/Ben-Dyson-official/MarioBrosClone",
-    },
-    {
-        img: require("./assets/img/ProjectImage/ProjectEuler.png"),
-        description: "This is a website containing a series of mathematical based coding challenges and problems I have worked on in my free time. I have solved 63 so far.",
-        link: "",
-    },
-
+const dataportfolio = [
+  {
+    title: "Stridify",
+    tagline: "Adaptive music generation for runners",
+    img: null,
+    description:
+      "Generates novel music in real time on an iOS device, continuously adapting to the runner's heart rate and cadence — no server, no fixed playlist, every run produces something unique. Built with a custom transformer model quantised to ONNX for on-device inference.",
+    tech: ["Python", "PyTorch", "ONNX Runtime", "React Native", "TypeScript", "Tone.js", "Expo"],
+    link: null,
+    linkLabel: "Source private until June 2026",
+    flagship: true,
+  },
+  {
+    title: "Starmapper",
+    tagline: "Constellation & star-cluster recognition",
+    img: require("./assets/img/ProjectImage/Starmapper.webp"),
+    description:
+      "Hackathon project built in 48 hours with a team of three. Identifies constellations from uploaded photos, denoises astrophotography, and recognises star clusters using computer vision.",
+    tech: ["Python", "Flask", "OpenCV", "TensorFlow"],
+    link: "https://github.com/Ben-Dyson-official/mush2024",
+  },
+  {
+    title: "CryptoDeal",
+    tagline: "Cryptocurrency trading simulator",
+    img: require("./assets/img/ProjectImage/cryptoDeal.webp"),
+    description:
+      "A simulated trading platform for practising crypto trades with live prices, news articles, and per-currency watchlists. Team project using a full Laravel + PHP backend.",
+    tech: ["Laravel", "PHP", "JavaScript", "CSS"],
+    link: "https://github.com/Ben-Dyson-official/CryptoDeal",
+  },
+  {
+    title: "Music Transcriber",
+    tagline: "Audio to sheet music",
+    img: require("./assets/img/ProjectImage/MusicTranscriber.webp"),
+    description:
+      "Converts an audio sample into rough sheet music using pitch detection algorithms. Built for A-Level coursework.",
+    tech: ["Python", "Flask"],
+    link: "https://github.com/Ben-Dyson-official/MusicTranscriber",
+  },
+  {
+    title: "Mario Bros Clone",
+    tagline: "2D platformer in Python",
+    img: require("./assets/img/ProjectImage/MarioClone.webp"),
+    description:
+      "A Super Mario Bros clone built with Python's Tkinter GUI, developed as part of a university module.",
+    tech: ["Python", "Tkinter"],
+    link: "https://github.com/Ben-Dyson-official/MarioBrosClone",
+  },
+  {
+    title: "Project Euler",
+    tagline: "Mathematical programming challenges",
+    img: require("./assets/img/ProjectImage/ProjectEuler.webp"),
+    description:
+      "Working through Project Euler's mathematical programming challenges in Python. 63 problems solved so far.",
+    tech: ["Python"],
+    link: "https://github.com/Ben-Dyson-official/Project-Euler",
+  },
 ];
 
 const contactConfig = {
-    YOUR_EMAIL: "benj.dyson@gmail.com",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vehicula eu nunc et sollicitudin. Cras pulvinar, nisi at imperdiet pharetra. ",
-    // creat an emailjs.com account
-    // check out this tutorial https://www.emailjs.com/docs/examples/reactjs/
-    YOUR_SERVICE_ID: "service_s76muee",
-    YOUR_TEMPLATE_ID: "template_id",
-    YOUR_USER_ID: "rcWA3PX7d7lG6d1w5",
+  YOUR_EMAIL: "benj.dyson@gmail.com",
+  FORMSPREE_ID: "",
 };
 
 const socialprofils = {
-    github: "https://github.com/Ben-Dyson-official",
-    linkedin: "https://www.linkedin.com/in/ben-dyson-uk/",
-    email: "mailto:benj.dyson@gmail.com"
+  github: "https://github.com/Ben-Dyson-official",
+  linkedin: "https://www.linkedin.com/in/ben-dyson-uk/",
+  email: "mailto:benj.dyson@gmail.com",
 };
+
 export {
-    meta,
-    dataabout,
-    dataportfolio,
-    worktimeline,
-    skills,
-    services,
-    introdata,
-    contactConfig,
-    socialprofils,
-    logotext,
+  meta,
+  dataabout,
+  dataportfolio,
+  skills,
+  introdata,
+  contactConfig,
+  socialprofils,
+  logotext,
 };

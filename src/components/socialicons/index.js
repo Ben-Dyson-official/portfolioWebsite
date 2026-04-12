@@ -14,7 +14,6 @@ import {
 } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { socialprofils } from "../../content_option";
-import emailLogo from "../../assets/img/email.png";
 
 const ICON_MAPPING = {
   default: FaCircle,
@@ -27,10 +26,10 @@ const ICON_MAPPING = {
   twitter: FaTwitter,
   twitch: FaTwitch,
   youtube: FaYoutube,
-  email: MdOutlineEmail
+  email: MdOutlineEmail,
 };
 
-export const Socialicons = (params) => {
+export const Socialicons = () => {
   return (
     <div className="stick_follow_icon">
       <ul>
@@ -38,8 +37,13 @@ export const Socialicons = (params) => {
           const IconComponent = ICON_MAPPING[platform] || ICON_MAPPING.default;
           return (
             <li key={platform}>
-              <a href={url}>
-                <IconComponent />
+              <a
+                href={url}
+                target={url.startsWith("mailto:") ? undefined : "_blank"}
+                rel={url.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                aria-label={platform}
+              >
+                <IconComponent aria-hidden="true" />
               </a>
             </li>
           );
