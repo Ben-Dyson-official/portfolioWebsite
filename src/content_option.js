@@ -14,7 +14,7 @@ const introdata = {
 const dataabout = {
   title: "About me",
   aboutme:
-    "I'm a third-year Computer Science student at the University of Manchester with interests in machine learning, systems programming, and full-stack web development. My dissertation project, Stridify, explores on-device generative AI — training a compact transformer model to generate music that adapts in real time to a runner's biometric data, without any server involvement. Outside of my dissertation I enjoy hackathons (Starmapper was built in 48 hours), working through algorithmic challenges, and building things that are actually useful.",
+    "I'm a third-year Computer Science student at the University of Manchester with interests in machine learning, systems programming, and full-stack web development. I'm particularly excited by the intersection of ML and biotech — applying intelligent systems to biological problems feels like one of the most impactful areas in computing right now. My dissertation project, Stridify, explores on-device generative AI — training a compact transformer model to generate music that adapts in real time to a runner's biometric data, without any server involvement. Outside of my dissertation I enjoy hackathons (Starmapper was built in 48 hours), working through algorithmic challenges, and building things that are actually useful.",
 };
 
 const skills = {
